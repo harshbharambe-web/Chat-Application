@@ -1,3 +1,4 @@
+<img width="1910" height="936" alt="Home" src="https://github.com/user-attachments/assets/92c40018-6505-4cdf-bb25-c4f09d72c728" />
 # 💬 Chat Application
 
 A full-stack chat application built using Node.js, Express.js, MongoDB, and Vanilla JavaScript.
@@ -118,6 +119,12 @@ chat-app/
 ## 📸 Screenshots
 
 (Add UI screenshots or Postman API responses here)
+<img width="1910" height="936" alt="Home" src="https://github.com/user-attachments/assets/43d6f964-8cc6-4b5a-965a-81774792b232" />
+<img width="1898" height="928" alt="All chats" src="https://github.com/user-attachments/assets/04ee4b95-d2a7-47af-8aa0-2124a90a7fb9" />
+<img width="1918" height="923" alt="New Chat" src="https://github.com/user-attachments/assets/d267f4a2-cce9-4d79-a45c-4f40e2e7a66f" />
+<img width="1918" height="926" alt="Delete" src="https://github.com/user-attachments/assets/09ee56ee-db62-499e-8fa6-ea2ba4bac359" />
+
+
 
 ---
 
