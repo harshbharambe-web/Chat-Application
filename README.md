@@ -61,8 +61,7 @@ The application uses RESTful APIs to manage chat messages.
 | Method | Endpoint      | Description                 |
 | ------ | ------------- | --------------------------- |
 | GET    | /chats        | Retrieve all messages       |
-| GET    | /chats/:id    | Retrieve a specific message |
-| POST   | /chats/ne     | Create a new message        |
+| POST   | /chats/new    | Create a new message        |
 | PUT    | /chats/:id    | Update an existing message  |
 | DELETE | /chats/:id    | Delete a message            |
 
