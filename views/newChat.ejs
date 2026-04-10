@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChatterBox — New Message</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div class="form-page">
+  <div style="width:100%;max-width:520px;">
+
+    <!-- Back -->
+    <a href="/chats" class="back-link">← Back to Chats</a>
+
+    <div class="form-card">
+      <div class="form-card-header">
+        <div class="logo" style="margin-bottom:18px;">
+          <div class="logo-icon" style="width:30px;height:30px;font-size:15px;">💬</div>
+          <span class="logo-text" style="font-size:1.1rem;">Chatter<span>Box</span></span>
+        </div>
+        <h1 class="form-card-title">New Message</h1>
+        <p class="form-card-sub">Send a message to someone. Fill in all fields to continue.</p>
+      </div>
+
+      <form method="POST" action="/chats">
+
+        <div class="form-group">
+          <label class="form-label" for="from">Your Name</label>
+          <input
+            id="from"
+            class="form-control"
+            type="text"
+            name="from"
+            placeholder="e.g. Alice"
+            required
+            autocomplete="off"
+          >
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="to">Recipient</label>
+          <input
+            id="to"
+            class="form-control"
+            type="text"
+            name="to"
+            placeholder="e.g. Bob"
+            required
+            autocomplete="off"
+          >
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="msg">Message</label>
+          <textarea
+            id="msg"
+            class="form-control"
+            name="msg"
+            placeholder="Write your message here…"
+            required
+            rows="5"
+          ></textarea>
+        </div>
+
+        <div class="form-footer">
+          <button class="btn btn-primary" type="submit">Send Message →</button>
+          <a href="/chats" class="btn btn-ghost">Cancel</a>
+        </div>
+
+      </form>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

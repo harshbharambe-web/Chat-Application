@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChatterBox — Edit Message</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div class="form-page">
+  <div style="width:100%;max-width:520px;">
+
+    <!-- Back -->
+    <a href="/chats" class="back-link">← Back to Chats</a>
+
+    <div class="form-card">
+      <div class="form-card-header">
+        <div class="logo" style="margin-bottom:18px;">
+          <div class="logo-icon" style="width:30px;height:30px;font-size:15px;">✏️</div>
+          <span class="logo-text" style="font-size:1.1rem;">Chatter<span>Box</span></span>
+        </div>
+        <h1 class="form-card-title">Edit Message</h1>
+        <p class="form-card-sub">Modify the content of your message below.</p>
+      </div>
+
+      <!-- Warning banner -->
+      <div class="edit-warning">
+        ⚠️ &nbsp;Editing will update the message and record the time of modification.
+      </div>
+
+      <!-- Original Info (read-only) -->
+      <div style="display:flex;gap:24px;margin-bottom:22px;">
+        <div style="flex:1;">
+          <div class="form-label" style="margin-bottom:5px;">From</div>
+          <div style="font-size:0.95rem;color:var(--text-primary);font-weight:500;"><%= chat.from %></div>
+        </div>
+        <div style="flex:1;">
+          <div class="form-label" style="margin-bottom:5px;">To</div>
+          <div style="font-size:0.95rem;color:var(--text-primary);font-weight:500;"><%= chat.to %></div>
+        </div>
+      </div>
+
+      <div class="form-divider"></div>
+
+      <form method="POST" action="/chats/<%= chat._id %>?_method=PUT">
+
+        <div class="form-group">
+          <label class="form-label" for="msg">Message</label>
+          <textarea
+            id="msg"
+            class="form-control"
+            name="msg"
+            rows="6"
+            required
+          ><%= chat.msg %></textarea>
+        </div>
+
+        <div class="form-footer">
+          <button class="btn btn-primary" type="submit">Save Changes →</button>
+          <a href="/chats" class="btn btn-ghost">Cancel</a>
+        </div>
+
+      </form>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
