@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChatterBox — Welcome</title>
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    /* Home-page only extras */
+    .home-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 28px 24px 0;
+      animation: slideDown 0.5s ease both;
+    }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      margin-top: 60px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 24px;
+    }
+    .feature-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 26px 22px;
+      transition: all var(--transition);
+      animation: fadeInUp 0.5s ease both;
+    }
+    .feature-card:hover {
+      border-color: rgba(232,160,48,0.35);
+      box-shadow: var(--shadow-glow);
+      transform: translateY(-3px);
+    }
+    .feature-card:nth-child(1) { animation-delay: 0.1s; }
+    .feature-card:nth-child(2) { animation-delay: 0.18s; }
+    .feature-card:nth-child(3) { animation-delay: 0.26s; }
+    .feature-card:nth-child(4) { animation-delay: 0.34s; }
+    .feature-icon { font-size: 1.8rem; margin-bottom: 12px; }
+    .feature-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--text-primary);
+    }
+    .feature-desc { color: var(--text-muted); font-size: 0.83rem; line-height: 1.6; }
+
+    .cta-section {
+      max-width: 900px;
+      margin: 60px auto 0;
+      padding: 0 24px 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 18px;
+    }
+    .cta-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .cta-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--text-primary);
+    }
+
+    /* Floating bubble decorations */
+    .deco-bubbles {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+    .bubble {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.05;
+      animation: floatBubble linear infinite;
+    }
+    @keyframes floatBubble {
+      0%   { transform: translateY(100vh) scale(0.6); opacity: 0; }
+      10%  { opacity: 0.06; }
+      90%  { opacity: 0.04; }
+      100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+    }
+    body > *:not(.deco-bubbles) { position: relative; z-index: 1; }
+
+    @media (max-width: 600px) {
+      .feature-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Decoration -->
+<div class="deco-bubbles" aria-hidden="true">
+  <div class="bubble" style="width:160px;height:160px;background:var(--accent);left:12%;animation-duration:14s;animation-delay:0s;"></div>
+  <div class="bubble" style="width:80px;height:80px;background:#6b9af7;left:55%;animation-duration:18s;animation-delay:3s;"></div>
+  <div class="bubble" style="width:120px;height:120px;background:#b07de8;left:80%;animation-duration:22s;animation-delay:6s;"></div>
+  <div class="bubble" style="width:60px;height:60px;background:var(--accent);left:35%;animation-duration:16s;animation-delay:9s;"></div>
+</div>
+
+<!-- NAV -->
+<nav class="home-nav">
+  <div class="logo">
+    <div class="logo-icon">💬</div>
+    <span class="logo-text">Chatter<span>Box</span></span>
+  </div>
+  <a href="/chats" class="btn btn-primary">Open Chats →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" style="max-width:900px;margin:0 auto;">
+  <div class="hero-eyebrow">Your personal messenger</div>
+  <h1 class="hero-title">
+    Send. Store.<br><span class="highlight">Stay Connected.</span>
+  </h1>
+  <p class="hero-sub">
+    ChatterBox is a clean, fast messaging log — create, edit, and manage your conversations with a beautiful interface.
+  </p>
+  <div class="hero-actions">
+    <a href="/chats/new" class="btn btn-primary" style="font-size:0.95rem;padding:12px 28px;">+ Start a Chat</a>
+    <a href="/chats" class="btn btn-ghost" style="font-size:0.95rem;padding:12px 28px;">View All Chats</a>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat-item">
+      <span class="stat-num">⚡</span>
+      <span class="stat-label">Instant Save</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">🔒</span>
+      <span class="stat-label">Edit Control</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">🗂️</span>
+      <span class="stat-label">Full History</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">🕑</span>
+      <span class="stat-label">Timestamped</span>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<div class="feature-grid">
+  <div class="feature-card">
+    <div class="feature-icon">✍️</div>
+    <div class="feature-title">Compose Freely</div>
+    <div class="feature-desc">Write messages to anyone in your network and store them instantly in your database.</div>
+  </div>
+  <div class="feature-card">
+    <div class="feature-icon">✏️</div>
+    <div class="feature-title">Edit Your Chats</div>
+    <div class="feature-desc">Made a typo? Edit only your own messages — changes are timestamped automatically.</div>
+  </div>
+  <div class="feature-card">
+    <div class="feature-icon">🗑️</div>
+    <div class="feature-title">Delete with Care</div>
+    <div class="feature-desc">Remove your own messages with a confirmation step — received messages stay untouched.</div>
+  </div>
+  <div class="feature-card">
+    <div class="feature-icon">🕐</div>
+    <div class="feature-title">Timestamp Tracking</div>
+    <div class="feature-desc">Every message shows when it was sent and when it was last edited — full transparency.</div>
+  </div>
+</div>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-label">Ready to start?</div>
+  <h2 class="cta-heading">Send your first message today.</h2>
+  <a href="/chats/new" class="btn btn-primary" style="font-size:0.95rem;padding:13px 32px;">Get Started →</a>
+</section>
+
+</body>
+</html>
