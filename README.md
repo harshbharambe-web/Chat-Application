@@ -1,8 +1,11 @@
-<img width="1910" height="936" alt="Home" src="https://github.com/user-attachments/assets/92c40018-6505-4cdf-bb25-c4f09d72c728" />
-# 💬 Chat Application
+
+## 💬 Chat Application
 
 A full-stack chat application built using Node.js, Express.js, MongoDB, and Vanilla JavaScript.
 This project demonstrates how a client-server architecture works using RESTful APIs to handle communication between frontend and backend.
+
+<img width="1910" height="936" alt="Home" src="https://github.com/user-attachments/assets/92c40018-6505-4cdf-bb25-c4f09d72c728" />
+
 
 ---
 
