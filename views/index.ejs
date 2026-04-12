@@ -98,15 +98,15 @@
               <% } %>
             </div>
 
-            <!-- Actions (only for sent chats) -->
-            <% if (isSent) { %>
-              <div class="chat-actions">
+            <!-- Actions: Edit only for own chats, Delete for all -->
+            <div class="chat-actions">
+              <% if (isSent) { %>
                 <form method="GET" action="/chats/<%= c._id %>/edit">
-                  <button class="btn btn-edit" type="submit">✏️ Edit</button>
+                  <button class="btn btn-edit" type="submit">&#9999;&#65039; Edit</button>
                 </form>
-                <button class="btn btn-danger" onclick="openDeleteModal('<%= c._id %>')">🗑 Delete</button>
-              </div>
-            <% } %>
+              <% } %>
+              <button class="btn btn-danger" onclick="openDeleteModal('<%= c._id %>')">&#128465; Delete</button>
+            </div>
           </div>
 
         </div>
